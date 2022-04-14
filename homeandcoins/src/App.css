@@ -216,6 +216,15 @@ h6 {
   }
 }
 /* End of Banner */
+
+/* Form Sell */
+
+.form-sell #surface input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 /* Title */
 .section-title {
   text-align: center;

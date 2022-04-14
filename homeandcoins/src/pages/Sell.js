@@ -2,20 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
-import Services from '../components/Services';
-import Sell from '../components/Sell';
+import FormSell from '../components/FormSell';
 const sell = () => {
   return (
     <>
-      <Hero>
-        <Banner title="HOME & COINS" subtitle="Buy or Sell Home With Crypto">
-          <Link to="/rooms" className="btn-primary">
-            our houses
+      <Hero hero="roomsHero">
+        <Banner title="Sell home">
+          <Link to="/" className="btn-primary">
+            return home
           </Link>
         </Banner>
       </Hero>
-      <Services />
-      <FeaturedRooms />
+      <FormSell />
     </>
   );
 };
