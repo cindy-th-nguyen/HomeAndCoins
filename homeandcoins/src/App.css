@@ -219,13 +219,23 @@ h6 {
 
 /* Form Sell */
 
-.form-sell #surface input {
-  width: 100%;
+#surface, #nbRooms, #price {
+  width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
+.filter-switch label {
+  cursor: pointer;
+}
+.filter-switch-item input:checked + label {
+  color: inherit;
+}
+.filter-switch-item input:not(:checked) + label {
+  --bg-opacity: 0;
+  box-shadow: none;
+}
 
 /* Connect */
 .connect-button {
