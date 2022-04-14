@@ -29,7 +29,7 @@ const FormSell = () => {
             <p>How many rooms does your proprety have?</p>
             <input type="number" id="nbRooms" name="nbRooms"  min="1" max="100"/>
 
-            <p>What price do you want to sell your proprety?</p>
+            <p>How much do you want to sell your proprety?</p>
             <input type="number" id="price" name="price"/>
             <br></br>
             <input className="connect-button" type="submit" value="Submit"/>
