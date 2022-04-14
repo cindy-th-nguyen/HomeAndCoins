@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
 import logo from '../images/logo.svg';
+import {Web3Provider} from "../Web3Provider";
+import {ContractABI} from "../ContractAbi";
 export default class Navbar extends Component {
   state = {
     isOpen: false
   };
   handleToggle = () => {
+    console.log("start");
+    const provider = new Web3Provider();
+    provider.helloWorld();
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
@@ -28,6 +33,10 @@ export default class Navbar extends Component {
           <ul
             className={this.state.isOpen ? 'nav-links show-nav' : 'nav-links'}
           >
+            <button
+                type="button"
+                onClick={this.handleToggle}
+            >test</button>
             <li>
               <Link to="/">Home</Link>
             </li>
