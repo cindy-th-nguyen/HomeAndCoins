@@ -33,10 +33,6 @@ export default class Navbar extends Component {
           <ul
             className={this.state.isOpen ? 'nav-links show-nav' : 'nav-links'}
           >
-            <button
-                type="button"
-                onClick={this.handleToggle}
-            >test</button>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -45,6 +41,11 @@ export default class Navbar extends Component {
             </li>
             <li>
               <Link to="/sell">Sell</Link>
+            </li>
+            <li>
+            <button align="right" type="button" className="connect-button"
+                onClick={this.handleToggle}
+            >MetaMask Connect</button>
             </li>
           </ul>
         </div>
