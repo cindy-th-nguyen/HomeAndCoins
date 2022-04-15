@@ -28,7 +28,12 @@ export default class Navbar extends Component {
     console.log("start");
     const provider = new Web3Provider();
     await provider.init();
-    provider.buyAnnouncement(0,1000).send();
+    const initialAdress = await provider.getIdOwner(0);
+
+    await provider.buyAnnouncement(0,1000).send();
+    const finalAdress = await provider.getIdOwner(0);
+    console.log("transfert de ", initialAdress, " à ", finalAdress);
+
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {

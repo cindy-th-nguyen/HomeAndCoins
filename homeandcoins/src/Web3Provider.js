@@ -34,9 +34,9 @@ export class Web3Provider {
         return request;
     }
 
-    async getAnnouncementOfOwner(id) {
-        var adressOfOwner = await this.atysContract.methods.announcementToOwner(0).call();
-        console.log("Owner of the house ",id, " is : ", adressOfOwner);
+    async getIdOwner(idAnnouncement) {
+        var adressOfOwner = await this.atysContract.methods.announcementToOwner(idAnnouncement).call();
+        console.log("Owner of the house ",idAnnouncement, " is : ", adressOfOwner);
         return adressOfOwner;
     }
 
