@@ -12,7 +12,6 @@ export default class Navbar extends Component {
     console.log("start");
     const provider = new Web3Provider();
     await provider.init();
-    provider.getAnnouncements();
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
