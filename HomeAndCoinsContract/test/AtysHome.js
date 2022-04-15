@@ -8,7 +8,10 @@ describe("Token contract", function () {
         console.log("oyyeeeeee")
 
         const hardhatAtysHome = await AtysContract.deploy();
-        const announcements = await hardhatAtysHome.getAnnouncements().call();
+
+        const provider = await hardhatAtysHome.connect(owner);
+        console.log(provider);
+        const announcements = await provider.functions.getAnnouncements.call();
         console.log(announcements);
     });
 });
