@@ -38,6 +38,9 @@ contract AtysHome {
 
     function buyAnnouncement (uint _announcementId, uint _amount) public payable {
         address receiver = announcementToOwner[_announcementId];
+        Announcement storage announcement = announcements[_announcementId];
+        require(_amount >= announcement.price);
         receiver.transfer(_amount);
+        announcementToOwner[_announcementId] = msg.sender;
     }
 }
