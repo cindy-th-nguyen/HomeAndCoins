@@ -8,16 +8,16 @@ const FormSell = () => {
         <br></br>
         <form className="form-sell"> 
             <p>What type of property do you want to rent?</p>
-            <ul id="filter1" class="filter-switch">
-                <li class="filter-switch-item">
-                    <input type="radio" name="propertyType" id="filter1-0" class="sr-only" checked/>
-                    <label for="filter1-0">
+            <ul id="filter1" className="filter-switch">
+                <li className="filter-switch-item">
+                    <input type="radio" name="propertyType" id="filter1-0" className="sr-only"/>
+                    <label>
                     Apartment
                     </label>
                 </li>
-                <li class="filter-switch-item">
-                    <input type="radio" name="propertyType" id="filter1-1" class="sr-only"/>
-                    <label for="filter1-1">
+                <li className="filter-switch-item">
+                    <input type="radio" name="propertyType" id="filter1-1" className="sr-only"/>
+                    <label>
                     House
                     </label>
                 </li>
