@@ -1,25 +1,57 @@
 export const ContractABI = [
     {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_spender",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "approve",
+        "constant": true,
+        "inputs": [],
+        "name": "getAnnouncements",
         "outputs": [
             {
-                "name": "success",
-                "type": "bool"
+                "components": [
+                    {
+                        "name": "price",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "name": "adresse",
+                        "type": "string"
+                    },
+                    {
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "description",
+                        "type": "string"
+                    }
+                ],
+                "name": "",
+                "type": "tuple[]"
             }
         ],
         "payable": false,
-        "stateMutability": "nonpayable",
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "announcementToOwner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -56,27 +88,18 @@ export const ContractABI = [
         "constant": false,
         "inputs": [
             {
-                "name": "_from",
-                "type": "address"
+                "name": "_announcementId",
+                "type": "uint256"
             },
             {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
+                "name": "_amount",
                 "type": "uint256"
             }
         ],
-        "name": "transferFrom",
-        "outputs": [
-            {
-                "name": "success",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
+        "name": "buyAnnouncement",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
         "type": "function"
     },
     {
@@ -99,28 +122,6 @@ export const ContractABI = [
             }
         ],
         "name": "Transfer",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": true,
-                "name": "_owner",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "_spender",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "Approval",
         "type": "event"
     },
     {
@@ -154,158 +155,5 @@ export const ContractABI = [
         ],
         "name": "NewAnnouncement",
         "type": "event"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            },
-            {
-                "name": "_spender",
-                "type": "address"
-            }
-        ],
-        "name": "allowance",
-        "outputs": [
-            {
-                "name": "remaining",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            },
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "allowed",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "announcementToOwner",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            }
-        ],
-        "name": "balanceOf",
-        "outputs": [
-            {
-                "name": "balance",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "balances",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "getAnnoucements",
-        "outputs": [
-            {
-                "components": [
-                    {
-                        "name": "price",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "title",
-                        "type": "string"
-                    },
-                    {
-                        "name": "adresse",
-                        "type": "string"
-                    },
-                    {
-                        "name": "size",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "description",
-                        "type": "string"
-                    }
-                ],
-                "name": "",
-                "type": "tuple[]"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "HelloWorld",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
     }
 ]

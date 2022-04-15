@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import {ContractABI} from "./ContractAbi"
 
-const SMART_CONTRACT_ADDRESS = "0x8308fC5aC6A50DedeaA4EDC87bE960388a9387f1";
+const SMART_CONTRACT_ADDRESS = "0x969b546A8bE57970b2bAf56be80343E46D2359F3";
 
 export class Web3Provider {
 
