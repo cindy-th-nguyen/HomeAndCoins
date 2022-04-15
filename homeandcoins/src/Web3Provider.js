@@ -20,13 +20,13 @@ export class Web3Provider {
     async createAnnouncement(price, title, adresse, size, description) {
         var request = await this.atysContract.methods.createAnnouncement(price, title, adresse, size, description).send({from: this.addresse[0]});
         console.log(request);
-        return this.provider;
+        return request;
     }
 
     async getAnnouncements() {
         var request = await this.atysContract.methods.getAnnouncements().call();
         console.log(request);
-        return this.provider;
+        return request;
     }
 
 }
