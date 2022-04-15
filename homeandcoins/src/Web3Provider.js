@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import {ContractABI} from "./ContractAbi"
 
-const SMART_CONTRACT_ADDRESS = "0x969b546A8bE57970b2bAf56be80343E46D2359F3";
+const SMART_CONTRACT_ADDRESS = "0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8";
 
 export class Web3Provider {
 
@@ -27,6 +27,17 @@ export class Web3Provider {
         var request = await this.atysContract.methods.getAnnouncements().call();
         console.log(request);
         return request;
+    }
+
+    async buyAnnouncements(id, price){
+        var request = await this.provider.buyAnnouncement(id, price).send({from: this.addresse[0]});
+        return request;
+    }
+
+    async getAnnouncementOfOwner(id) {
+        var adressOfOwner = await this.atysContract.methods.announcementToOwner(0).call();
+        console.log("Owner of the house ",id, " is : ", adressOfOwner);
+        return adressOfOwner;
     }
 
 }
