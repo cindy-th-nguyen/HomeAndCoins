@@ -8,10 +8,20 @@ const FormSell = () => {
         <br></br>
         <form className="form-sell"> 
             <p>What type of property do you want to rent?</p>
-            <input type="radio" id="apartment" name="propertyType" value="apartment"/>
-            <label for="apartment">Apartment</label>
-            <input type="radio" id="house" name="propertyType" value="house"/>
-            <label for="house">House</label>
+            <ul id="filter1" class="filter-switch">
+                <li class="filter-switch-item">
+                    <input type="radio" name="propertyType" id="filter1-0" class="sr-only" checked/>
+                    <label for="filter1-0">
+                    Apartment
+                    </label>
+                </li>
+                <li class="filter-switch-item">
+                    <input type="radio" name="propertyType" id="filter1-1" class="sr-only"/>
+                    <label for="filter1-1">
+                    House
+                    </label>
+                </li>
+            </ul>
 
             <p>What is the surface of your property?</p>
             <input type="number" id="surface" name="surface" placeholder="m²"/>
@@ -19,10 +29,10 @@ const FormSell = () => {
             <p>How many rooms does your proprety have?</p>
             <input type="number" id="nbRooms" name="nbRooms"  min="1" max="100"/>
 
-            <p>What price do you want to sell your proprety?</p>
+            <p>How much do you want to sell your proprety?</p>
             <input type="number" id="price" name="price"/>
             <br></br>
-            <input type="submit" value="Submit"/>
+            <input className="connect-button" type="submit" value="Submit"/>
         </form>
     </div>
   );
