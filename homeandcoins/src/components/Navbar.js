@@ -8,10 +8,11 @@ export default class Navbar extends Component {
   state = {
     isOpen: false
   };
-  handleToggle = () => {
+  handleToggle = async () => {
     console.log("start");
     const provider = new Web3Provider();
-    provider.helloWorld();
+    await provider.init();
+    provider.getAnnouncements();
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
