@@ -11,10 +11,8 @@ export class Web3Provider {
 
     async init() {
         const { ethereum } = window;
-        console.log(ethereum);
         await Web3.givenProvider.request({method: "eth_requestAccounts"});
         this.addresse = await Web3.givenProvider.enable();
-        console.log(this.addresse[0]);
         var client = new Web3(Web3.givenProvider || "ws://localhost:8545");
         this.atysContract = new client.eth.Contract(ContractABI, SMART_CONTRACT_ADDRESS);
     }
