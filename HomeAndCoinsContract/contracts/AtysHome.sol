@@ -24,8 +24,8 @@ contract AtysHome {
 
     mapping (uint => address) public announcementToOwner;
     mapping (address => uint) ownerannouncementCount;
-
-    function createAnnouncement(uint _price, string _title, string _adresse, uint _size, string _description) public {
+    
+     function createAnnouncement(uint _price, string _title, string _adresse, uint _size, string _description) public {
         uint announcementId = announcements.push(Announcement(_price, _title, _adresse, _size, _description)) - 1;
         announcementToOwner[announcementId] = msg.sender;
         ownerannouncementCount[msg.sender]++;
@@ -42,5 +42,9 @@ contract AtysHome {
         require(_amount >= announcement.price);
         receiver.transfer(_amount);
         announcementToOwner[_announcementId] = msg.sender;
+    }
+
+    function deleteAnnouncement(uint _announcementId) public {
+        delete announcements[_announcementId];
     }
 }

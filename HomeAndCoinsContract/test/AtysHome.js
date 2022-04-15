@@ -40,6 +40,22 @@ describe("AtysHome contract", function () {
 
             expect(announcements[0].title).equal(homeTitle);
         });
+
+
+        it("Announcements should be deleted", async function () {
+
+            const homeTitle = "TestHouse";
+
+            
+            provider.functions.deleteAnnouncement(0);
+            const response = await provider.functions.getAnnouncements.call();
+            console.log(response);
+            const announcements = response[0];
+            console.log(announcements);
+
+            expect(announcements.length).equal(0);
+        });
+
     });
 });
 
