@@ -14,6 +14,7 @@ describe("AtysHome contract", function () {
         const hardhatAtysHome = await AtysContract.deploy();
 
         provider = await hardhatAtysHome.connect(ownerAdress);
+        provider2 = await hardhatAtysHome.connect(addresse1);
     });
 
     describe("Annoucements", function () {
@@ -38,15 +39,23 @@ describe("AtysHome contract", function () {
             const announcements = response[0];
             console.log(announcements);
 
+            const potentialBuyerAdress = await provider.functions.announcementToOwner(0);
+            console.log(potentialBuyerAdress);
+
             expect(announcements[0].title).equal(homeTitle);
+        });
+
+        it("user should be buy an announcement", async function () {
+            const homeTitle = "TestHouse";
+            const createAnnouncement = await provider.functions.createAnnouncement(1000, homeTitle, "20 rue de Test", 100, "This is a Test House");
+            provider2.functions.buyAnnouncement(0, 1001);
+            const potentialBuyerAdress = await provider.functions.announcementToOwner(0);
+            
+            expect(potentialBuyerAdress[0]).equal(ownerAdress.address);
         });
 
 
         it("Announcements should be deleted", async function () {
-
-            const homeTitle = "TestHouse";
-
-            
             provider.functions.deleteAnnouncement(0);
             const response = await provider.functions.getAnnouncements.call();
             console.log(response);
@@ -55,6 +64,8 @@ describe("AtysHome contract", function () {
 
             expect(announcements.length).equal(0);
         });
+
+        
 
     });
 });
