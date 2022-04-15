@@ -30,7 +30,7 @@ export class Web3Provider {
     }
 
     async buyAnnouncements(id, price){
-        var request = await this.provider.buyAnnouncement(id, price).send({from: this.addresse[0]});
+        var request = await this.atysContract.methods.buyAnnouncement(id, price).send({from: this.addresse[0]});
         return request;
     }
 
