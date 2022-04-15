@@ -30,7 +30,7 @@ export default class Navbar extends Component {
     await provider.init();
     const initialAdress = await provider.getIdOwner(0);
 
-    await provider.buyAnnouncement(0,1000).send();
+    await provider.buyAnnouncement(0,1000);
     const finalAdress = await provider.getIdOwner(0);
     console.log("transfert de ", initialAdress, " à ", finalAdress);
 

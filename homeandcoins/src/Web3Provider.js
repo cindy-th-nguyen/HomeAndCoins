@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import {ContractABI} from "./ContractAbi"
 
-const SMART_CONTRACT_ADDRESS = "0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8";
+const SMART_CONTRACT_ADDRESS = "0x19d29a838B6Fd1382d5b16775cD4D1dc0fdED057";
 
 export class Web3Provider {
 
@@ -29,7 +29,7 @@ export class Web3Provider {
         return request;
     }
 
-    async buyAnnouncements(id, price){
+    async buyAnnouncement(id, price){
         var request = await this.atysContract.methods.buyAnnouncement(id, price).send({from: this.addresse[0]});
         return request;
     }
